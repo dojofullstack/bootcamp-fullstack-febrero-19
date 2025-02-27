@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <script src="
+    https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+    "></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+</head>
+<body>
+
+
+
+    
+    <table border="5" cellspacing="10px" id="tableDojo" class="display">
+
+        <thead>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Avatar Picture</th>
+        </thead>
+
+        <tbody>
+
+            <!-- table row -->
+            <tr>
+                <!-- table data -->
+                <td>Rosa</td>
+                <td>rosa@gmail.com</td>
+                <td>+109120910921</td>
+                <td>
+                    <img width="200px" src="https://thumbs.dreamstime.com/b/caricatura-de-elon-musk-para-foto-perfil-avatar-ilustraci%C3%B3n-ceo-tesla-y-twitter-281433590.jpg" alt="">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Henry</td>
+                <td>henry@gmail.com</td>
+                <td>9198219291</td>
+                <td>
+                    <img width="200px" src="https://thumbs.dreamstime.com/b/caricatura-de-elon-musk-para-foto-perfil-avatar-ilustraci%C3%B3n-ceo-tesla-y-twitter-281433590.jpg" alt="">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pedro</td>
+                <td>pedro@gmail.com</td>
+                <td>+110290190</td>
+                <td>
+                    <img width="200px" src="https://thumbs.dreamstime.com/b/caricatura-de-elon-musk-para-foto-perfil-avatar-ilustraci%C3%B3n-ceo-tesla-y-twitter-281433590.jpg" alt="">
+                </td>
+            </tr>
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Buscar registros" >
+                </td>
+
+                <td>
+                    <button>Preview Page</button>
+                </td>
+                <td>
+                    <button>Next Page</button>
+                </td>
+             
+            </tr>
+            
+        </tfoot>
+
+
+    </table>
+
+
+    
+    <script>
+
+        let table = new DataTable('#tableDojo', {
+            // options
+        });
+
+    </script>
+    
+</body>
+</html>
