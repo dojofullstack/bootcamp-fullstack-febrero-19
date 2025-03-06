@@ -4,17 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        .form-block-data {
+            display: inline-block;
+            margin: 10px;
+            border: 5px solid orange ;
+        }
+
+    </style>
+
 </head>
 <body>
 
     <h1>Trabajando con lso formulario</h1>
 
 
-    <form action="" method="">
+    <!-- <form action="https://api.dojofullstack.com/formulario" method="post">
 
-        <input type="">
+        <input type="text" placeholder="Ingresa tu Email" name="correo" id="form_correo"  >
 
-    </form>
+        <input type="password" name="contrasena" id="form_contrasena" placeholder="Ingresa tu clave secreta">
+
+        <input type="submit" value="INiciar Sesion" id="btn_login">
+
+    </form> -->
+
+
+
+
+
+        <form action="" method="post">
+
+            <div class="form-block-data">
+
+                <input type="text" placeholder="Ingresa tu nombre" name="name" id="form-name"> <br>
+                <input type="text" placeholder="Ingresa tu apellido" name="lastname" id="form-lastname"><br>
+                <input type="tel" placeholder="Ingresa tu Tlf. Celular" name="phone" id="form-phone"><br>
+                <input type="email" placeholder="Ingresa tu Email" name="email" id="form-email"><br>
+            </div>
+
+            <div class="form-block-data">
+                <textarea rows="6" cols="35"  name="mensaje" id="form-mensaje" placeholder="Escribe aqui tu mensaje"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" name="" id="" value="Enviar consulta">
+            </div>
+        
+
+            
+        </form>
+
+
+
+    <script>
+
+        // document.querySelector("#btn_login").addEventListener("click", () => {
+        //     console.log("Hola! soy javascript vamos a procesar este fomrulario!!!");
+            
+        //     console.log(document.querySelector("#form_correo").value);
+            
+        //     console.log(document.querySelector("#form_contrasena").value);
+
+        //     // realizar solicitud http metodo POST
+        //     //fetch
+
+        // })
+
+
+    </script>
 
     
 </body>
