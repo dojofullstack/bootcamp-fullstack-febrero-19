@@ -1,0 +1,47 @@
+
+
+
+
+main {
+    background-color: purple;
+    color: skyblue;
+    padding: 10px;
+
+    height: 300px;
+}
+
+
+footer {
+    background-color: brown;
+    color: white;
+}
+
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 50px;
+    text-align: right;
+    text-transform: uppercase;
+    /* text-decoration: overline; */
+
+}
+
+
+
+h3, h5 {
+    border: 3px solid orange;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 50px;
+    text-shadow: 6px 5px 6px #00ff838a;
+}
+
+h5 {
+    font-size: 30px;
+    color: white;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <img src="https://placehold.co/50x50" alt="Logo" class="h-6">
+                <ul class="flex space-x-6 ml-10">
+                    <li><a href="#" class="text-gray-700">Lo nuevo</a></li>
+                    <li><a href="#" class="text-gray-700">Hombre</a></li>
+                    <li><a href="#" class="text-gray-700">Mujer</a></li>
+                    <li><a href="#" class="text-gray-700">Niños</a></li>
+                    <li><a href="#" class="text-gray-700">Accesorios</a></li>
+                    <li><a href="#" class="text-gray-700">Jordan</a></li>
+                    <li><a href="#" class="text-gray-700">Descuentos</a></li>
+                </ul>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Buscar" class="border rounded-md px-2 py-1">
+                <span class="text-gray-700">❤️</span>
+                <span class="text-gray-700">🛒</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Images -->
+        <div class="grid grid-cols-2 gap-2">
+            <img src="https://placehold.co/200x200" alt="Producto" class="border">
+            <img src="https://placehold.co/200x200" alt="Producto" class="border">
+            <img src="https://placehold.co/200x200" alt="Producto" class="border col-span-2">
+        </div>
+
+        <!-- Product Details -->
+        <div>
+            <h2 class="text-sm text-red-600">Materiales sostenibles</h2>
+            <h1 class="text-2xl font-bold mt-2">Nike Camiseta Alianza Lima 2025 Local Estampada</h1>
+            <p class="mt-2">Camiseta de fútbol para hombre Dri-FIT</p>
+            <p class="text-xl font-bold mt-4">S/ 289.90</p>
+            
+            <button class="mt-4 bg-white border rounded-md px-4 py-2 flex items-center">
+                Personalizar
+                <span class="ml-2 text-gray-600">✎</span>
+            </button>
+
+            <div class="mt-4">
+                <p>Selecciona tu talla</p>
+                <div class="flex space-x-2 mt-2">
+                    <button class="border rounded-md px-4 py-2">XS</button>
+                    <button class="border rounded-md px-4 py-2">S</button>
+                    <button class="border rounded-md px-4 py-2">M</button>
+                    <button class="border rounded-md px-4 py-2">L</button>
+                    <button class="border rounded-md px-4 py-2">XL</button>
+                </div>
+            </div>
+
+            <button class="mt-4 bg-black text-white rounded-md px-4 py-2 w-full">Agregar al Carrito</button>
+        </div>
+    </div>
+
+</body>
+</html>
