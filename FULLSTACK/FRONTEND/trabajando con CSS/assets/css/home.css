@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+html {
+    font-family: "Playfair Display", serif;
+}
+
+
+button.btn-pay {
+    background-color: aqua;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+div.container-secondary button.btn-pay {
+    background-color: purple;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+
+body > main > div.container-main > button.btn-pay {
+    font-size: 30px;
+    color: orange;
+}
+
+.btn-pay {
+    display: block;
+}
+
+
+
+
+.title {
+    display: inline-block;
+}
+
+.subtitle {
+    display: inline-block;
+}
+
+
+span, b, mark {
+    display: block;
+}
+
+
+.btn-1, .btn-2, .image-banner {
+    display: block;
+}
+
+.btn-1, .btn-2, .image-banner {
+    /* display: none; */
+    visibility: hidden;
+}
+
+#btn-pay-now {
+    position: relative;
+}
+
+
+ul li {
+    display: inline-block;
+    margin: 0 30px;
+    font-weight: bold;
+}
+
+.logo {
+    height: 80px;
+}
+
+.container-img, ul {
+    display: inline-block;
+}
+
+input {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: fixed;
+    z-index: 99999;
+    background-color: black;
+    color: white;
+}
+
+
+main {
+    margin-top: 100px;
+}
+
+p {
+    padding: 10px
+}
+
+
+.chat-wasap {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    margin: 30px;
+}
