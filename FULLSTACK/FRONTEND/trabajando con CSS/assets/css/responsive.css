@@ -1,8 +1,61 @@
 
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
 .container-flexbox {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+}
+
+
+.card-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.card-info-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: gray;
+}
+
+h5, h6 {
+    margin: 0;
+}
+
+.card-btn-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cart {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: aquamarine;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bi-star-fill {
+    color: gold;
+}
+
+
+.card-flex img {
+    width: 100%;
+}
+
+.card-flex {
+    width: 45vw;
 }
