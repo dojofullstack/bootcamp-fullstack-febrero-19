@@ -1,0 +1,58 @@
+
+
+
+.banner {
+    background-image: url(https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/bltc9b4e52e8b32f29f/67f6dae65cd51177baef4f94/hh-090425-cyber-computo.png?auto=webp&disable=upscale&quality=70&width=1920);
+    height: 300px;
+    width: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    body {
+        background-color: orange;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+        background-color: orange;
+    }
+
+
+    .banner {
+        /* display: none; */
+        background-image: url(https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt8a6c99aacb179bc0/67f5944104ebaf6d68b23e71/hh-app-090425-cyber-calzado.jpg?auto=webp&disable=upscale&quality=70&width=720);
+        height: 300px;
+        width: 100vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
+}
+
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    body {
+        background-color: orange;
+    }
+
+}
+
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    body {
+        background-color: orange;
+    }
+
+}
