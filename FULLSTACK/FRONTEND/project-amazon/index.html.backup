@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amazon – Ofertas del Día (Demo)</title>
+
+    <!-- Tailwind + DaisyUI  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white text-gray-800">
+    <!-- 🔵  NAV BAR SUPERIOR  -->
+    <nav class="navbar bg-base-100 shadow-sm px-4">
+      <!-- Logo + Envío -->
+      <div class="flex items-center gap-1">
+        <span class="text-2xl font-black text-[#FF9900]">amazon</span>
+        <div class="flex flex-col leading-none ml-1">
+          <small class="text-xs text-gray-500">Enviar a</small>
+          <span class="text-sm font-semibold">Perú</span>
+        </div>
+      </div>
+
+      <!-- Buscador -->
+      <div class="flex-1 mx-4">
+        <label class="input input-bordered flex items-center gap-2 w-full">
+          <input
+            type="text"
+            placeholder="Buscar en Amazon"
+            class="grow outline-none"
+          />
+          <svg
+            class="w-5 h-5 opacity-70"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104 14.65a7.5 7.5 0 0012.65 1.94z"
+            />
+          </svg>
+        </label>
+      </div>
+
+      <!-- Links rápidos -->
+      <div class="hidden lg:flex gap-6 text-sm">
+        <a class="link">Hola, Identifícate</a>
+        <a class="link">Cuenta y Listas</a>
+        <a class="link">Devoluciones</a>
+        <a class="link">Pedidos</a>
+        <a class="link flex items-center gap-1">
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h12m-12 0a2 2 0 104 0m8 0a2 2 0 104 0"
+            />
+          </svg>
+          Carrito
+        </a>
+      </div>
+    </nav>
+
+    <!-- 🔵  BARRA SECUNDARIA   -->
+    <div
+      class="bg-gray-100 text-sm w-full overflow-x-auto whitespace-nowrap py-2 px-4 flex gap-6"
+    >
+      <a class="link">Todo</a>
+      <a class="link font-semibold">Ofertas del Día</a>
+      <a class="link">Listas</a>
+      <a class="link">Prime Video</a>
+      <a class="link">Tarjetas de Regalo</a>
+      <a class="link">Servicio al Cliente</a>
+      <a class="link">Vender</a>
+    </div>
+
+    <!--  SUB‑NAVEGACIÓN DE OFERTAS  -->
+    <div
+      class="border-b px-4 lg:px-8 text-sm flex gap-6 items-center overflow-x-auto"
+    >
+      <button class="tab tab-bordered tab-active">Ofertas de hoy</button>
+      <button class="tab tab-bordered">Cupones</button>
+      <button class="tab tab-bordered">Renewed</button>
+      <button class="tab tab-bordered">Outlet</button>
+      <button class="tab tab-bordered tab-active text-[#FF9900]">
+        Amazon Segunda Mano
+      </button>
+      <button class="tab tab-bordered">Grocery Deals</button>
+    </div>
+
+    <!--  ENCABEZADO PRINCIPAL  -->
+    <header class="px-4 lg:px-8 pt-8">
+      <h1 class="text-3xl font-bold">Ofertas del día</h1>
+    </header>
+
+    <!-- 🔵  CONTENIDO PRINCIPAL  -->
+    <section
+      class="flex flex-col lg:flex-row gap-8 px-4 lg:px-8 py-6 max-w-screen-2xl mx-auto"
+    >
+      <!--  FILTROS  -->
+      <aside class="lg:w-60 space-y-8">
+        <!-- Categoría -->
+        <div>
+          <h2 class="font-semibold mb-2">Categorías</h2>
+          <label class="label cursor-pointer justify-start gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">Automotriz</span>
+          </label>
+          <label class="label cursor-pointer justify-start gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">Belleza y Cuidado Personal</span>
+          </label>
+          <a class="link link-primary text-xs ml-7">Ver más</a>
+        </div>
+
+        <!-- Marcas -->
+        <div>
+          <h2 class="font-semibold mb-2">Marcas</h2>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">Ring</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">CGK Unlimited</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">Anker</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">FDW</span>
+          </label>
+          <a class="link link-primary text-xs ml-7">Ver más</a>
+        </div>
+
+        <!-- Opinión -->
+        <div>
+          <h2 class="font-semibold mb-2">Opinión del cliente</h2>
+          <label class="label cursor-pointer gap-2">
+            <input type="radio" name="rating" class="radio radio-sm" checked />
+            <span class="label-text">Todo</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="radio" name="rating" class="radio radio-sm" />
+            <span class="label-text">⭐⭐⭐⭐ y más</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="radio" name="rating" class="radio radio-sm" />
+            <span class="label-text">⭐⭐⭐ y más</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="radio" name="rating" class="radio radio-sm" />
+            <span class="label-text">⭐⭐ y más</span>
+          </label>
+        </div>
+
+        <!-- Precio -->
+        <div>
+          <h2 class="font-semibold mb-2">Precio</h2>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" checked />
+            <span class="label-text">Todo</span>
+          </label>
+          <label class="label cursor-pointer gap-2">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text">Por menos de US$25</span>
+          </label>
+        </div>
+      </aside>
+
+      <!--  LISTADO DE PRODUCTOS  -->
+      <main class="flex-1">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6"
+        >
+          <!-- 🔸 Tarjeta genérica (duplica / ajusta según necesites) -->
+          <article class="card border hover:shadow-md transition">
+            <figure class="aspect-[3/2] bg-gray-50">
+              <img
+                src="https://via.placeholder.com/400x266?text=Imagen+1"
+                alt="Producto 1"
+                class="h-full w-full object-cover"
+              />
+            </figure>
+            <div class="card-body p-4 space-y-2">
+              <span class="badge badge-error text-white text-[10px]"
+                >‑30% Oferta Relámpago</span
+              >
+              <h3 class="text-sm leading-snug line-clamp-2">
+                Juego de sábanas tamaño queen, 4 piezas, cómodas…
+              </h3>
+            </div>
+          </article>
+
+          <article class="card border hover:shadow-md transition">
+            <figure class="aspect-[3/2] bg-gray-50">
+              <img
+                src="https://via.placeholder.com/400x266?text=Imagen+2"
+                alt="Producto 2"
+                class="h-full w-full object-cover"
+              />
+            </figure>
+            <div class="card-body p-4 space-y-2">
+              <span class="badge badge-error text-white text-[10px]"
+                >‑15% Oferta Relámpago</span
+              >
+              <h3 class="text-sm leading-snug line-clamp-2">
+                Colchón de 5 pulgadas de espuma viscoelástica…
+              </h3>
+            </div>
+          </article>
+
+          <article class="card border hover:shadow-md transition">
+            <figure class="aspect-[3/2] bg-gray-50">
+              <img
+                src="https://via.placeholder.com/400x266?text=Imagen+3"
+                alt="Producto 3"
+                class="h-full w-full object-cover"
+              />
+            </figure>
+            <div class="card-body p-4 space-y-2">
+              <span class="badge badge-error text-white text-[10px]"
+                >‑21% Oferta Relámpago</span
+              >
+              <h3 class="text-sm leading-snug line-clamp-2">
+                Samsung Galaxy S24 FE AI – Teléfono inteligente
+              </h3>
+            </div>
+          </article>
+
+          <article class="card border hover:shadow-md transition">
+            <figure class="aspect-[3/2] bg-gray-50">
+              <img
+                src="https://via.placeholder.com/400x266?text=Imagen+4"
+                alt="Producto 4"
+                class="h-full w-full object-cover"
+              />
+            </figure>
+            <div class="card-body p-4 space-y-2">
+              <span class="badge badge-error text-white text-[10px]"
+                >‑30% Oferta Relámpago</span
+              >
+              <h3 class="text-sm leading-snug line-clamp-2">
+                Licuadora Vitamix 5200, grado profesional
+              </h3>
+            </div>
+          </article>
+
+          <!-- 💡 Copia/pega más <article> para llenar la grilla -->
+        </div>
+      </main>
+    </section>
+  </body>
+</html>

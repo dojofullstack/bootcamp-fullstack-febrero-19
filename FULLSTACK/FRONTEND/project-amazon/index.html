@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <body>
+
+    <header>
+        <div class="navbar bg-base-100 shadow-sm">
+            <div >
+              <a class="btn btn-ghost text-xl my-2">
+                <img class="w-[100px]"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png">
+              </a>
+
+              <div class="inline-flex justify-center">
+                <span><i class="bi bi-geo-alt-fill mx-2"></i></span> <span>Enviar a Peru</span>
+              </div>
+
+            </div>
+
+
+            <div class="flex-1">
+                <label class="input w-full mx-3">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                      </g>
+                    </svg>
+                    <input type="search" required placeholder="Buscar articulos"  />
+                  </label>
+            </div>
+  
+              
+            <div class="flex-none">
+
+                <details class="dropdown ms-5">
+                    <summary class="btn m-1">Cuenta</summary>
+                    <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                      <li><a>Item 1</a></li>
+                      <li><a>Item 2</a></li>
+                      <li><a>Item 2</a></li>
+                      <li><a>Item 2</a></li>
+                      <li><a>Item 2</a></li>
+                    </ul>
+                  </details>
+
+
+                  <button class="btn btn-primary">Devolciones</button>
+
+
+                
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                  <div class="indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
+                    <span class="badge badge-sm indicator-item">8</span>
+                  </div>
+                </div>
+                <div
+                  tabindex="0"
+                  class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                  <div class="card-body">
+                    <span class="text-lg font-bold">8 Items</span>
+                    <span class="text-info">Subtotal: $999</span>
+                    <div class="card-actions">
+                      <button class="btn btn-primary btn-block">View cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                  </div>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                  <li>
+                    <a class="justify-between">
+                      Profile
+                      <span class="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><a>Logout</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        
+        <div class="md:mx-5  breadcrumbs text-sm">
+            <ul>
+              <li>
+                <label for="my-drawer" class="btn btn-secondary drawer-button">
+                    <i class="bi bi-list"></i> Todo
+                </label>
+              </li>
+              <li><a>Ofertas del dia</a></li>
+              <li>Prime Video</li>
+              <li>Tarjets de rgalo</li>
+              <li>Servicio al cliente</li>
+            </ul>
+          </div>
+
+
+        <div class="drawer">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+              <!-- Page content here -->
+            
+            </div>
+            <div class="drawer-side">
+              <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+       
+              <ul class="menu xl:menu-horizontal bg-base-200 rounded-box lg:min-w-max">
+                <li>
+                  <a>Solutions</a>
+                  <ul>
+                    <li><a>Design</a></li>
+                    <li><a>Development</a></li>
+                    <li><a>Hosting</a></li>
+                    <li><a>Domain register</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Enterprise</a>
+                  <ul>
+                    <li><a>CRM software</a></li>
+                    <li><a>Marketing management</a></li>
+                    <li><a>Security</a></li>
+                    <li><a>Consulting</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Products</a>
+                  <ul>
+                    <li><a>UI Kit</a></li>
+                    <li><a>WordPress themes</a></li>
+                    <li><a>WordPress plugins</a></li>
+                    <li>
+                      <a>Open source</a>
+                      <ul>
+                        <li><a>Auth management system</a></li>
+                        <li><a>VScode theme</a></li>
+                        <li><a>Color picker app</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Company</a>
+                  <ul>
+                    <li><a>About us</a></li>
+                    <li><a>Contact us</a></li>
+                    <li><a>Privacy policy</a></li>
+                    <li><a>Press kit</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+    </header>
+
+    <main class="mx-auto  md:max-w-7xl">
+
+        <div class="mb-5">
+            <h1 class="text-3xl">
+                Ofertas del día
+            </h1>
+        </div>
+
+        <div class="carousel w-full">
+            <div id="slide1" class="carousel-item relative w-full">
+                
+                <div class="flex gap-3 md:max-w-6xl mx-auto h-[100px]">
+                    <button class="btn btn-outline">Default</button>
+                    <button class="btn btn-outline btn-primary">Primary</button>
+                    <button class="btn btn-outline btn-secondary">Secondary</button>
+                    <button class="btn btn-outline btn-accent">Accent</button>
+                    <button class="btn btn-outline btn-info">Info</button>
+                    <button class="btn btn-outline btn-success">Success</button>
+                    <button class="btn btn-outline btn-warning">Warning</button>
+                    <button class="btn btn-outline btn-error">Error</button>
+                </div>
+                
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide4" class="btn btn-circle">❮</a>
+                <a href="#slide2" class="btn btn-circle">❯</a>
+              </div>
+            </div>
+            <div id="slide2" class="carousel-item relative w-full">
+        
+                <div class="flex gap-3 md:max-w-6xl mx-auto h-[100px]">
+                    <button class="btn btn-outline">Default</button>
+                    <button class="btn btn-outline btn-primary">Primary</button>
+                    <button class="btn btn-outline btn-secondary">Secondary</button>
+                    <button class="btn btn-outline btn-accent">Accent</button>
+                    <button class="btn btn-outline btn-info">Info</button>
+                    <button class="btn btn-outline btn-success">Success</button>
+                    <button class="btn btn-outline btn-warning">Warning</button>
+                    <button class="btn btn-outline btn-error">Error</button>
+                </div>
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide1" class="btn btn-circle">❮</a>
+                <a href="#slide3" class="btn btn-circle">❯</a>
+              </div>
+            </div>
+  
+      
+          </div>
+
+
+
+          <div class="flex gap-10">
+            
+  
+
+                 <div id="filtros" class="w-2/10">
+
+                  <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                    <legend class="fieldset-legend"></legend>
+                    <h5 class="text-lg">Categoría</h5>
+                    <label class="label">
+                      <input type="radio" name="category" checked="checked" class="radio radio-primary" />
+                      Todo
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      Almacenamiento
+
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      Artículos para Pintura, Dibujo y Arte
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      Construcción de Modelos y Pasatiempo
+                    </label>
+                  </fieldset>
+
+
+
+                  <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                    <legend class="fieldset-legend"></legend>
+                    <h5 class="text-lg">Marcas</h5>
+                    <label class="label">
+                      <input type="checkbox" name="category" checked="checked" class="checkbox checkbox-primary" />
+                      APPLE
+                    </label>
+                    <label class="label">
+                      <input type="checkbox" name="category" class="checkbox checkbox-primary" />
+                      Xiomi
+
+                    </label>
+                    <label class="label">
+                      <input type="checkbox" name="category" class="checkbox checkbox-primary" />
+                      Samsung
+                    </label>
+                    <label class="label">
+                      <input type="checkbox" name="category" class="checkbox checkbox-primary" />
+                      HUAWI
+                    </label>
+                  </fieldset>
+
+
+
+                  <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                    <legend class="fieldset-legend"></legend>
+                    <h5 class="text-lg">Resenas</h5>
+                    <label class="label">
+                      <input type="radio" name="category" checked="checked" class="radio radio-primary" />
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+
+
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+
+                    </label>
+                    <label class="label">
+                      <input type="radio" name="category" class="radio radio-primary" />
+                      <i class="bi bi-star-fill"></i>
+
+                    </label>
+                  </fieldset>
+
+
+
+                </div>
+
+
+                <div class="flex w-8/10 flex-wrap gap-5" id="catalogo">
+
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                        <figure>
+                          <img
+                            src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                          alt="Shoes" />
+                        </figure>
+        
+                        <div class="card-body">
+                          <h2 class="card-title text-error text-sm">
+                            <div class="badge badge-error text-white text-sm">-50%</div>
+                            Oferta Relampazo
+                          </h2>
+                          <p class="text-lg">
+                            Juego de sabanas
+                          </p>
+        
+                          <div class="flex gap-3">
+                            <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                          </div>
+        
+                        </div>
+                     
+                    </div>
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                        <figure>
+                          <img
+                            src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                          alt="Shoes" />
+                        </figure>
+        
+                        <div class="card-body">
+                          <h2 class="card-title text-error text-sm">
+                            <div class="badge badge-error text-white text-sm">-50%</div>
+                            Oferta Relampazo
+                          </h2>
+                          <p class="text-lg">
+                            Juego de sabanas
+                          </p>
+        
+                          <div class="flex gap-3">
+                            <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                          </div>
+        
+                        </div>
+                     
+                    </div>
+        
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                        <figure>
+                          <img
+                            src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                          alt="Shoes" />
+                        </figure>
+        
+                        <div class="card-body">
+                          <h2 class="card-title text-error text-sm">
+                            <div class="badge badge-error text-white text-sm">-50%</div>
+                            Oferta Relampazo
+                          </h2>
+                          <p class="text-lg">
+                            Juego de sabanas
+                          </p>
+        
+                          <div class="flex gap-3">
+                            <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                          </div>
+        
+                        </div>
+                     
+                    </div>
+        
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                        <figure>
+                          <img
+                            src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                          alt="Shoes" />
+                        </figure>
+        
+                        <div class="card-body">
+                          <h2 class="card-title text-error text-sm">
+                            <div class="badge badge-error text-white text-sm">-50%</div>
+                            Oferta Relampazo
+                          </h2>
+                          <p class="text-lg">
+                            Juego de sabanas
+                          </p>
+        
+                          <div class="flex gap-3">
+                            <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                          </div>
+        
+                        </div>
+                     
+                    </div>
+        
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                        <figure>
+                          <img
+                            src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                            https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                          alt="Shoes" />
+                        </figure>
+        
+                        <div class="card-body">
+                          <h2 class="card-title text-error text-sm">
+                            <div class="badge badge-error text-white text-sm">-50%</div>
+                            Oferta Relampazo
+                          </h2>
+                          <p class="text-lg">
+                            Juego de sabanas
+                          </p>
+        
+                          <div class="flex gap-3">
+                            <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                              <div class="avatar avatar-placeholder">
+                                <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                  <span class="text-xs">UI</span>
+                                </div>
+                              </div>
+                          </div>
+                          
+        
+                        </div>
+                     
+                    </div>
+        
+
+                    <div class="card bg-base-100 shadow-sm w-[20%]">
+                      <figure>
+                        <img
+                          src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                          https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                          https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                        alt="Shoes" />
+                      </figure>
+      
+                      <div class="card-body">
+                        <h2 class="card-title text-error text-sm">
+                          <div class="badge badge-error text-white text-sm">-50%</div>
+                          Oferta Relampazo
+                        </h2>
+                        <p class="text-lg">
+                          Juego de sabanas
+                        </p>
+      
+                        <div class="flex gap-3">
+                          <div class="avatar avatar-placeholder">
+                              <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                <span class="text-xs">UI</span>
+                              </div>
+                            </div>
+                            <div class="avatar avatar-placeholder">
+                              <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                <span class="text-xs">UI</span>
+                              </div>
+                            </div>
+                            <div class="avatar avatar-placeholder">
+                              <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                                <span class="text-xs">UI</span>
+                              </div>
+                            </div>
+                        </div>
+      
+                      </div>
+                   
+                  </div>
+
+
+                  <div class="card bg-base-100 shadow-sm w-[20%]">
+                    <figure>
+                      <img
+                        src="https://m.media-amazon.com/images/I/71girJD2oyL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte 1x,
+                        https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF339,339_QL58_.jpg?aicid=discounts-widgets-horizonte 1.5x,
+                        https://m.media-amazon.com/images/I/71girJD2oyL._AC_FMavif_SF452,452_QL58_.jpg?aicid=discounts-widgets-horizonte 2x"
+                      alt="Shoes" />
+                    </figure>
+    
+                    <div class="card-body">
+                      <h2 class="card-title text-error text-sm">
+                        <div class="badge badge-error text-white text-sm">-50%</div>
+                        Oferta Relampazo
+                      </h2>
+                      <p class="text-lg">
+                        Juego de sabanas
+                      </p>
+    
+                      <div class="flex gap-3">
+                        <div class="avatar avatar-placeholder">
+                            <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                              <span class="text-xs">UI</span>
+                            </div>
+                          </div>
+                          <div class="avatar avatar-placeholder">
+                            <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                              <span class="text-xs">UI</span>
+                            </div>
+                          </div>
+                          <div class="avatar avatar-placeholder">
+                            <div class="bg-neutral text-neutral-content w-5 rounded-full">
+                              <span class="text-xs">UI</span>
+                            </div>
+                          </div>
+                      </div>
+    
+                    </div>
+                 
+                </div>
+                </div>
+          </div>
+
+    
+
+
+    </main>
+
+    
+    <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+      <form>
+        <h6 class="footer-title">Newsletter</h6>
+        <fieldset class="w-80">
+          <label>Enter your email address</label>
+          <div class="join">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input input-bordered join-item" />
+            <button class="btn btn-primary join-item">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+
+</body>
+</html>
