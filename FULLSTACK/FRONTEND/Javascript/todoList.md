@@ -5,11 +5,15 @@ Intro JS
 - Tipos de datos
 - Control de errores
 -------------------
-- DOM
-------------
 Estructuras de Datos
-- Condiciones, Callbacks, Funciones, Iteradores
-- Operadores Log.
+- Condiciones, Operadores Log & comparacion. Funciones, Callbacks 
+--------------
+- DOM
+-------------
+- Formas de escribir funciones (por expression, arrow Functions)
+------------
+, Iteradores
+------------
 - Librerias & paquetes
 - Proyectos (CRUD)
 ---------------------
