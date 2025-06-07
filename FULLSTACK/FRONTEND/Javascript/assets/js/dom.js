@@ -21,8 +21,8 @@ function cambiarColorBoton() {
     btnComprar.style.backgroundColor = "blue";
 }
 
-btnComprar.addEventListener("click", cambiarColorBoton);
 
+btnComprar.addEventListener("click", cambiarColorBoton);
 
 
 

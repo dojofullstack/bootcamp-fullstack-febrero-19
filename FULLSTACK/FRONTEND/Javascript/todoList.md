@@ -11,8 +11,8 @@ Estructuras de Datos
 - DOM
 -------------
 - Formas de escribir funciones (por expression, arrow Functions)
-------------
-, Iteradores
+, Iteradores (forEach, map)
+
 ------------
 - Librerias & paquetes
 - Proyectos (CRUD)
