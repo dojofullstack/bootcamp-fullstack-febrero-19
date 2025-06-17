@@ -16,5 +16,16 @@ Estructuras de Datos
 ------------
 - Librerias & paquetes
 - Proyectos (CRUD)
+----
+Otros de libs de terceros:
+- axios
+- ChartJS
+- DatatablesJS
+- Stripe o Paypal
 ---------------------
 - POO y JS Asincronia.
+-----------------------------------------------------------------
+
+REACT JS
+
+-------------------------------------------------

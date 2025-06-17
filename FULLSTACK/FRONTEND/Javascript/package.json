@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chatbot": "^1.2.3",
+    "stripe": "^18.2.1"
+  }
+}
