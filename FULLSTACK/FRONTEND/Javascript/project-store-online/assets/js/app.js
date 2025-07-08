@@ -1,11 +1,19 @@
 console.log("Hola, mundo desde app.js");
 
 const API_URL = "https://api.dojofullstack.com/api-demo/v1/product/";
+
 const DB_PRODUCTS = {
   products: [],
+  loadingProduct: false,
+  loadingComment: false,
+  loadingPost: false,
 };
 
+
 const getProducts = async () => {
+  
+  document.querySelector("#catalogo-product").classList.add("skeleton");
+
   try {
     const response = await axios.get(API_URL);
 
@@ -13,6 +21,8 @@ const getProducts = async () => {
       console.log("Productos obtenidos:", response.data);
       DB_PRODUCTS.products = response.data.results;
       renderProducts();
+
+      document.querySelector("#catalogo-product").classList.remove("skeleton");
     } else {
         console.error("Error al obtener los productos:", response.statusText);
     }
@@ -47,12 +57,22 @@ const renderProducts = () => {
               ${product.name}
               <div class="badge badge-secondary">NEW</div>
             </h2>
+            <h3 class="text-lg text-primary font-bold" >$${parseFloat(product.price).toFixed(1) }</h3>
             <p>
              ${product.description}
             </p>
-            <div class="card-actions justify-end">
+            <div class="card-actions justify-between">
+              
+              <button class="btn btn-error" onclick="deleteProduct(${product.id})">
+              <i class="bi bi-trash3-fill text-2xl"></i>
+              </button>
               <div class="badge badge-outline">Fashion</div>
               <div class="badge badge-outline">Products</div>
+
+              <button class="btn btn-info" onclick="openModalUpdate(${product.id})">
+                  <i class="bi bi-pencil-square text-2xl"></i>
+              </button>
+
             </div>
           </div>
         </div>
@@ -73,33 +93,140 @@ const renderProducts = () => {
 
 
 
-const createProduct = async () => {
-  const title = document.querySelector("input[type='text']").value;
-  const price = document.querySelector("input[type='number']").value;
-  const image = document.querySelector("input[type='url']").value;
-  const description = document.querySelector("textarea").value;
+const createProduct = () => {
+  // console.log("Crear producto");
+  DB_PRODUCTS.loadingProduct = true;
+  document.querySelector("#loading-product").classList.remove("hidden");
 
-//   if (!title || !price || !image || !description) {
-//     console.error("Todos los campos son obligatorios");
-//     return;
-//   }
+  const title = document.querySelector("#title-product").value;
+  const price = document.querySelector("#price-product").value;
+  const image = document.querySelector("#image-product").value;
+  const description = document.querySelector("#description-product").value;
 
-  try {
-    const response = await axios.post(API_URL, {
+  // if (!title || !price || !image || !description) {
+  //   alert("Todos los campos son obligatorios");
+  //   return;
+  // }
+
+   axios.put(API_URL, {
       name: title,
       price: parseFloat(price),
       image_url: image,
       description: description,
+    }).then((response) => {
+          console.log("Producto creado:", response.data);
+          getProducts();
+          my_modal_1.close();
+          document.querySelector("#loading-product").classList.add("hidden");
+    }).catch((error) => {
+      console.error("Error al crear el producto:", error);
     });
 
-    if (response.status === 201) {
-      console.log("Producto creado:", response.data);
-      getProducts();
-      my_modal_1.close();
-    } else {
-      console.error("Error al crear el producto:", response.statusText);
-    }
-  } catch (error) {
-    console.error("Error al crear el producto:", error);
-  }
+
+  // try {
+  //   const respponse = await axios.post(API_URL, {
+  //     name: title,
+  //     price: parseFloat(price),
+  //     image_url: image,
+  //     description: description,
+  //   });
+
+  //   if (response.status === 201) {
+  //     console.log("Producto creado:", response.data);
+  //     getProducts();
+  //     my_modal_1.close();
+  //   } else {
+  //     console.error("Error al crear el producto:", response.statusText);
+  //   }
+  // } catch (error) {
+  //   console.error("Error al crear el producto:", error);
+  // }
+
+}
+
+
+
+
+const deleteProduct = (id) => {
+  
+  document.querySelector("#catalogo-product").classList.add("skeleton");
+
+  axios.delete(`https://api.dojofullstack.com/api-demo/v1/product/${id}/`).then((response) => {
+    console.log("Producto eliminado:", response.data);
+    getProducts();
+
+    document.querySelector("#catalogo-product").classList.remove("skeleton");
+  }).catch((error) => {
+    console.error("Error al eliminar el producto:", error);
+  });
+
+}
+
+
+
+const getProductDetail = (id) => {
+  console.log("Obtener detalle del producto:", id);
+
+  // llamar api get para obtener el producto por id
+  axios.get(`https://api.dojofullstack.com/api-demo/v1/product/${id}/`).then((response) => {
+    console.log("Detalle del producto:", response.data);
+  
+    // mostrar el detalle del producto en un modal o en la consola
+
+    const product = response.data;
+
+    document.querySelector("#title-product-update").value = product.name;
+    document.querySelector("#price-product-update").value = product.price;
+    document.querySelector("#image-product-update").value = product.image_url;
+    document.querySelector("#description-product-update").value = product.description;
+
+
+
+  }).catch((error) => {
+    console.error("Error al obtener el detalle del producto:", error);
+  });
+};
+
+
+
+
+const openModalUpdate = (id) => {
+  console.log("Actualizar producto:", id);
+
+  document.querySelector("#id-product").value = id;
+
+  my_modal_update.showModal();
+
+  // llamar api get para obtener el producto por id
+  getProductDetail(id);
+
+};
+
+
+
+
+const updateProduct = () => {
+
+  const productID = document.querySelector("#id-product").value;
+  const title = document.querySelector("#title-product-update").value;
+  const price = document.querySelector("#price-product-update").value;
+  const image = document.querySelector("#image-product-update").value;
+  const description = document.querySelector("#description-product-update").value;
+
+  const payload = {
+    name: title,
+    price: parseFloat(price),
+    image_url: image,
+    description: description,
+  };
+
+  axios.put(`https://api.dojofullstack.com/api-demo/v1/product/${productID}/`, payload).then((response) => {
+    console.log("Producto actualizado:", response.data);
+    getProducts();
+    my_modal_update.close();
+  }).catch((error) => {
+    console.error("Error al actualizar el producto:", error);
+  });
+
+
 }
