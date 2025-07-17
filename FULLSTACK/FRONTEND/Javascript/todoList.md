@@ -22,6 +22,7 @@ Estructuras de Datos
 - D - DELETE -> METODO HTTP DELETE
 - U - UPDATE -> METODO HTTP PUT
 ----
+
 Otros de libs de terceros:
 - axios
 - ChartJS
@@ -29,6 +30,18 @@ Otros de libs de terceros:
 - Stripe o Paypal
 ---------------------
 API DE AUTH
+
+- Standar HTTP 
+- Basic Token (Token Fijo)
+- JWT (2 access, refresk Token dinamicos & temporales)
+- oAuth (Auth con terceros Google, Facebook X.com)
+
+- Registro de usuarios (API REGISTER, LOGIN)
+- Almacenamiento Local (LocalStorage & Cookies)
+- Login
+- Vista privada admin.html
+- index.html (vista publcia)
+
 ----------------
 - POO y JS Asincronia.
 -----------------------------------------------------------------

@@ -2,6 +2,9 @@ console.log("Hola, mundo desde app.js");
 
 const API_URL = "https://api.dojofullstack.com/api-demo/v1/product/";
 
+const API_AUTH_REGISTER = "https://api.dojofullstack.com/api/auth/users/";
+const API_AUTH_TOKEN = "https://api.dojofullstack.com/api/auth/jwt/create/";
+
 const DB_PRODUCTS = {
   products: [],
   loadingProduct: false,
@@ -108,7 +111,7 @@ const createProduct = () => {
   //   return;
   // }
 
-   axios.put(API_URL, {
+   axios.post(API_URL, {
       name: title,
       price: parseFloat(price),
       image_url: image,
@@ -230,3 +233,67 @@ const updateProduct = () => {
 
 
 }
+
+
+
+const registerUser = () => {
+
+    // RECOPILAR LOS DATOS DEL FORMULARIO
+    const name = document.querySelector("#username").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;  
+    const passwordConfirm = document.querySelector("#password-confirm").value;
+
+    if (password !== passwordConfirm) {
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
+    const payload = {
+        username: name,
+        email: email,
+        password: password,
+        firtsName: name,
+    };
+
+
+    // ENVIAR LOS DATOS A LA API
+    axios.post(API_AUTH_REGISTER, payload).then((response) => {
+        console.log("Usuario registrado:", response.data);
+        alert("Usuario registrado correctamente");
+        window.location.href = "/project-store-online/auth/login.html";
+    }).catch((error) => {
+        console.error("Error al registrar el usuario:", error);
+        alert("Error al registrar el usuario");
+    });
+
+}
+
+
+
+const loginUser = () => {
+
+    // RECOPILAR LOS DATOS DEL FORMULARIO
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+
+    const payload = {
+        username: email,
+        password: password,
+    };
+
+    // ENVIAR LOS DATOS A LA API
+    axios.post(API_AUTH_TOKEN, payload).then((response) => {
+        console.log("Usuario logueado:", response.data);
+        
+        // GUARDAR EL TOKEN EN LOCAL STORAGE
+
+
+        alert("Usuario logueado correctamente");
+        window.location.href = "/project-store-online/admin.html";
+    }).catch((error) => {
+        console.error("Error al loguear el usuario:", error);
+        alert("Error al loguear el usuario");
+    });
+
+};

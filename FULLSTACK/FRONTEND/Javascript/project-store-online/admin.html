@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl">Administrador</a>
+        </div>
+        <div class="flex-none">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span class="badge badge-sm indicator-item">8</span>
+              </div>
+            </div>
+            <div
+              tabindex="0"
+              class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
+            >
+              <div class="card-body">
+                <span class="text-lg font-bold">8 Items</span>
+                <span class="text-info">Subtotal: $999</span>
+                <div class="card-actions">
+                  <button class="btn btn-primary btn-block">View cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar"
+            >
+              <div class="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <div class="carousel w-full">
+          <div id="item1" class="carousel-item w-full">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+              class="w-full"
+            />
+          </div>
+          <div id="item2" class="carousel-item w-full">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+              class="w-full"
+            />
+          </div>
+          <div id="item3" class="carousel-item w-full">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+              class="w-full"
+            />
+          </div>
+          <div id="item4" class="carousel-item w-full">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+              class="w-full"
+            />
+          </div>
+        </div>
+        <div class="flex w-full justify-center gap-2 py-2">
+          <a href="#item1" class="btn btn-xs">1</a>
+          <a href="#item2" class="btn btn-xs">2</a>
+          <a href="#item3" class="btn btn-xs">3</a>
+          <a href="#item4" class="btn btn-xs">4</a>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-lg" onclick="my_modal_1.showModal()">Crear Producto</button>
+
+
+      <div class="catalogo-product flex flex-wrap gap-6" id="catalogo-product" skeleton>
+        <!-- <div class="card bg-base-100 w-96 shadow-sm">
+          <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Card Title
+              <div class="badge badge-secondary">NEW</div>
+            </h2>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Fashion</div>
+              <div class="badge badge-outline">Products</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+
+    <!-- Open the modal using ID.showModal() method -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold my-3">CONFIGURAR PRODUCTO</h3>
+    <div class="flex flex-col gap-3 items-center" id="form-product">
+        <input id="title-product" type="text" placeholder="Titulo" class="input input-primary" />
+        <input id="price-product" type="number" placeholder="Precio" class="input input-primary" />
+        <input id="image-product" type="url" placeholder="Imagen" class="input input-primary" />
+        <textarea id="description-product" type="text" placeholder="Descripción" class="textarea textarea-primary"></textarea>
+        <button onclick="createProduct()" class="btn btn-primary">
+          <span id="loading-product" class="loading loading-spinner loading-md hidden"  ></span>  Crear Producto
+        </button>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+<dialog id="my_modal_update" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold my-3">ACTUALIZAR PRODUCTO</h3>
+    <div class="flex flex-col gap-3 items-center" id="form-product-update">
+        <input id="id-product" value="" type="hidden" />
+        <input id="title-product-update" type="text" placeholder="Titulo" class="input input-primary" />
+        <input id="price-product-update" type="number" placeholder="Precio" class="input input-primary" />
+        <input id="image-product-update" type="url" placeholder="Imagen" class="input input-primary" />
+        <textarea id="description-product-update" type="text" placeholder="Descripción" class="textarea textarea-primary"></textarea>
+        <button onclick="updateProduct()" class="btn btn-primary">
+          <span id="loading-product-update" class="loading loading-spinner loading-md hidden"  ></span>
+            Actualizar Producto
+        </button>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+    <footer
+      class="footer sm:footer-horizontal bg-base-200 text-base-content p-10"
+    >
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+      <form>
+        <h6 class="footer-title">Newsletter</h6>
+        <fieldset class="w-80">
+          <label>Enter your email address</label>
+          <div class="join">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input input-bordered join-item"
+            />
+            <button class="btn btn-primary join-item">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        getProducts();
+    </script>
+  </body>
+</html>
