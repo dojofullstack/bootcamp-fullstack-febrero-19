@@ -261,7 +261,7 @@ const registerUser = () => {
     axios.post(API_AUTH_REGISTER, payload).then((response) => {
         console.log("Usuario registrado:", response.data);
         alert("Usuario registrado correctamente");
-        window.location.href = "/project-store-online/auth/login.html";
+        window.location.href = "/Javascript/project-store-online/auth/login.html";
     }).catch((error) => {
         console.error("Error al registrar el usuario:", error);
         alert("Error al registrar el usuario");
@@ -288,12 +288,134 @@ const loginUser = () => {
         
         // GUARDAR EL TOKEN EN LOCAL STORAGE
 
+        localStorage.setItem("access", response.data.access);
+        localStorage.setItem("refresh", response.data.refresh);
+
+        document.cookie = `access=${response.data.access}; path=/; max-age=3600`;
+
 
         alert("Usuario logueado correctamente");
-        window.location.href = "/project-store-online/admin.html";
+        window.location.href = "/Javascript/project-store-online/admin.html";
     }).catch((error) => {
         console.error("Error al loguear el usuario:", error);
         alert("Error al loguear el usuario");
     });
 
 };
+
+
+
+
+const laboratioLocalStorage = () => {
+
+    const cartStore = {
+        products: [
+            {
+                id: 1,
+                name: "Producto 1",
+                price: 10.99,
+                quantity: 2,
+            },
+            {
+                id: 2,
+                name: "Producto 2",
+                price: 5.49,
+                quantity: 1,
+            },
+        ],
+        total: 3,
+        count: 0,
+    }
+
+
+    console.log(localStorage);
+
+    localStorage.setItem("email", "henry@gmail.com");
+    localStorage.setItem("theme", "light");
+    localStorage.setItem("cartStore", JSON.stringify(cartStore) );
+    
+    const email = localStorage.getItem("email");
+    console.log(email);
+
+    localStorage.removeItem("theme");
+
+    localStorage.clear();
+
+    localStorage.setItem("email", "carlos@gmail.com");
+
+}
+
+
+
+// laboratioLocalStorage();
+
+const laboratioCookies = () => {
+
+    console.log(document.cookie);
+
+    const fechaActual = new Date();
+    const fechaNow = new Date();
+
+    const fechaExpiracion = fechaActual.getTime() + 24*60*60*1000;
+
+    fechaActual.setTime(fechaExpiracion);
+
+
+    document.cookie = "pais=mexico; path=/; expires=".concat(fechaActual.toUTCString());
+
+
+    document.cookie = "pais=peru; path=/; expires=".concat(fechaActual.toUTCString());
+
+
+    document.cookie = "pais=; path=/; expires=".concat(fechaNow.toUTCString());
+
+
+}
+
+
+
+// laboratioCookies();
+
+
+const loadProfile = () => {
+    const accessToken = localStorage.getItem("access");
+
+    if (!accessToken) {
+        console.error("No hay token de acceso disponible");
+        window.location.href = "/Javascript/project-store-online/auth/login.html";
+        return;
+    }
+
+
+    axios.get("https://api.dojofullstack.com/api/auth/users/me/", {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+    }).then((response) => {
+
+        Toastify({
+          text: "Perfil cargado correctamente",
+          duration: 3000,
+          destination: "#",
+          newWindow: true,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+
+        console.log("Perfil del usuario:", response.data);
+        document.querySelector("#username").innerHTML = response.data.username;
+        document.querySelector("#profile-image").src = `https://avatar.iran.liara.run/username?username=${response.data.username}`;
+
+    }).catch((error) => {
+        console.error("Error al obtener el perfil del usuario:", error);
+        window.location.href = "/Javascript/project-store-online/auth/login.html";
+
+
+    });
+}

@@ -35,14 +35,19 @@ API DE AUTH
 - Basic Token (Token Fijo)
 - JWT (2 access, refresk Token dinamicos & temporales)
 - oAuth (Auth con terceros Google, Facebook X.com)
-
 - Registro de usuarios (API REGISTER, LOGIN)
 - Almacenamiento Local (LocalStorage & Cookies)
 - Login
 - Vista privada admin.html
 - index.html (vista publcia)
-
 ----------------
+
+admin.html
+- refactorizar la funcion loadProfile & renovar token
+- Web Deployment CI & CD
+
+--------------
+
 - POO y JS Asincronia.
 -----------------------------------------------------------------
 
